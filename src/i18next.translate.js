@@ -9,7 +9,6 @@ function applyReplacement(str, replacementHash, nestedKey, options) {
       , unEscapingSuffix = 'HTML'+suffix;
 
     var keys = Object.keys(replacementHash);
-
     for (var i = 0; i < keys.length; i++) {
         var key = keys[i],
           value = replacementHash[key],
