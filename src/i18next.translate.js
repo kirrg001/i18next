@@ -8,6 +8,10 @@ function applyReplacement(str, replacementHash, nestedKey, options) {
       , suffix = options.interpolationSuffix ? f.regexEscape(options.interpolationSuffix) : o.interpolationSuffixEscaped
       , unEscapingSuffix = 'HTML'+suffix;
 
+    if (typeof replacementHash === 'object' && replacementHash.constructor.name === 'Mongoose') {
+        throw new Error('Please convert Mongoose Objects to JSON Object using toObject');
+    }
+
     var hash = replacementHash.replace && typeof replacementHash.replace === 'object' ? replacementHash.replace : replacementHash;
     f.each(hash, function(key, value) {
         var nextKey = nestedKey ? nestedKey + o.keyseparator + key : key;

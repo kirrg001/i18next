@@ -45,7 +45,8 @@ module.exports = function(grunt) {
       },
       all: {
         singleRun: true,
-        browsers: ['PhantomJS', 'Chrome', 'Firefox', 'Safari']
+        browsers: ['Chrome']
+        // browsers: ['PhantomJS', 'Chrome', 'Firefox', 'Safari']
       },
       dev: {
         reporters: 'dots',
